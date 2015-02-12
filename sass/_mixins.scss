@@ -1,0 +1,25 @@
+@mixin vCenterParrent {
+	&:before {
+		content: '';
+		display: inline-block;
+		min-height: 100%;
+		vertical-align: middle;
+	}
+}
+
+@mixin vCenterChild {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+@mixin rowMachine($numPerRow, $margin) {
+  width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+  &:nth-child(n) {
+    margin-bottom: $margin;
+    margin-right: $margin;
+  }
+  &:nth-child(#{$numPerRow}n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}

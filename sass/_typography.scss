@@ -1,0 +1,26 @@
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+
+p {
+	font: 300 normal 1em/1.2em 'Open Sans', sans-serif;
+}
+
+a.tag {
+	font: 300 normal .6em/1.2em 'Open Sans', sans-serif;
+	letter-spacing: .05em;
+}
+a.latest-link {
+	font: 400 normal .8em/0em 'Open Sans', sans-serif;
+}
+nav#main-menu {
+	ul {
+		a {
+			font: 300 normal .9em/1em 'Open Sans', sans-serif;
+			text-transform: uppercase;
+			&:hover {
+				font-weight: 900;
+			}
+		}
+	}
+}
