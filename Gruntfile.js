@@ -10,8 +10,11 @@ module.exports = function(grunt) {
         options: {
             server: {
                 baseDir: "./",
-                watchTask: true
-                // proxy: "local.dev" <-- if external server
+                watchTask: true,
+                open: "external",
+                browser: "google chrome",
+                // online: false,
+                // proxy: "local.dev" // if external server
             }
         }
     },
@@ -19,7 +22,7 @@ module.exports = function(grunt) {
     uglify: {
       global: {
         files: {
-          "scripts/min/global-min.js": ["scripts/modernizr.js","scripts/jquery-1.11.1.min.js","scripts/velocity.min.js","scripts/main.js"]
+          "scripts/min/global-min.js": ["scripts/modernizr.js","scripts/jquery-1.11.1.min.js","scripts/TweenMax.min.js","scripts/main.js"]
         }
       }
     },
@@ -48,15 +51,17 @@ module.exports = function(grunt) {
 
     svgstore: {
       options: {
-        prefix : "shape-",
         cleanup: false,
+        prefix: '',
         svg: {
-          style: "display: none;"
+          style: "display:none;",
+          xmlns: "http://www.w3.org/2000/svg",
+          'xmlns:xlink': "http://www.w3.org/1999/xlink"
         }
       },
       default: {
         files: {
-          "svgs/svg-defs.svg": ["svg/*.svg"]
+          "defs.svg": ["svg/*.svg"]
         }
       }
     },
